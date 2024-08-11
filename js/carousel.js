@@ -2,29 +2,45 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
     const carouselInner = document.querySelector('.carousel-inner');
-    const items = document.querySelectorAll('.carousel-item');
+    const slides = document.querySelectorAll('.carousel-item');
 
-    let currentIndex = 0;
+    let slideIndex = 0;
 
-    function updateCarousel() {
-        if (carouselInner) {
-            carouselInner.style.transform = translateX(-${currentIndex * 100}%);
-        }
+function showSlide(index) {
+
+slides.forEach((slide, i) => {
+
+slide.style.transform = `translateX(${100 * (i - index)}%)`;});
+}
+function showNextSlide() {
+
+    if (slideIndex < slides.length + 1 ) {
+    
+    slideIndex++;
+    
+    showSlide(slideIndex);
+    
     }
+    
+    }
+    
+    function showPrevSlide() {
+    
+    if (slideIndex > 0) {
+    
+    slideIndex--;
+    
+    showSlide(slideIndex);
+    
+    }
+    
+    }
+    nextBtn.addEventListener('click', showNextSlide);
 
-    prevBtn.addEventListener('click', () => {
-        if (items.length > 0) {
-            currentIndex = (currentIndex > 0) ? currentIndex - 1 : items.length - 1;
-            updateCarousel();
-        }
-    });
+prevBtn.addEventListener('click', showPrevSlide);
 
-    nextBtn.addEventListener('click', () => {
-        if (items.length > 0) {
-            currentIndex = (currentIndex < items.length - 1) ? currentIndex + 1 : 0;
-            updateCarousel();
-        }
-    });
+showSlide(slideIndex);
 
-    updateCarousel();
 });
+
+    
