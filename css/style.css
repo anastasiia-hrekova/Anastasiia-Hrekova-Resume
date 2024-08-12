@@ -50,11 +50,11 @@ body {
     margin-top: 20px;
   }
 
-  .skills,.experience
+  /* .skills,.experience
   .portfolio,
   .contact {
     padding: 50px 0;
-  }
+  } */
 
   h2 {
     text-align: center;
@@ -125,6 +125,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     text-align: center;
+    padding-left: 0;
   }
 
   .skills-list li {
@@ -179,7 +180,7 @@ body {
     color: #fff;
     background-color: rgba(0, 0, 0, 0.6);
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius:  5px;
     margin: 0;
   }
 
@@ -193,13 +194,16 @@ body {
   .contact-info {
     font-size: 1.1rem;
     text-align: center;
+
   }
 
   .social-list {
     display: flex;
+    align-items: center;
     justify-content: center;
     gap: 30px;
     margin-top: 20px;
+    padding-left: 0;
   }
 
   .social-list li {
@@ -232,6 +236,19 @@ body {
 
     .portfolio-item h3 .carousel-item h3 {
       font-size: 1rem;
+    }
+
+    .social-list{
+      font-size: 1rem;
+      gap: 20px;
+    }
+
+    .contact-info{
+      font-size: 1rem;
+    }
+
+    footer{
+      font-size: 0.8rem;
     }
 
   }
